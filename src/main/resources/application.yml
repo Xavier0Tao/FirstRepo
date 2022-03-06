@@ -1,0 +1,26 @@
+
+#boot的配置文件需要进行设置添加（在project structure 的 facets 里)
+
+server:
+  port: 83
+
+hobby: work
+
+users:
+  - name: Xavier
+    id: 12
+  - nickname: Josepg
+    id: 230
+
+datasource1:
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/girrafe
+  username: root
+  password: password
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/girrafe
+    username: root
+    password: password
