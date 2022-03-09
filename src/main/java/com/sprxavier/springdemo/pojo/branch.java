@@ -2,6 +2,7 @@ package com.sprxavier.springdemo.pojo;
 
 
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
 @Component
 public class branch {
@@ -10,7 +11,7 @@ public class branch {
     1	Corporate	100	2006-02-09
     2	Scranton	102	1992-04-06
     3	Stamford	106	1998-02-13
-        在实体类中基本数据类型建议使用包装类型
+        在实体类中基本数据类型建议使用包装类型8
         * */
     private Integer branch_id;
     private String branch_name;

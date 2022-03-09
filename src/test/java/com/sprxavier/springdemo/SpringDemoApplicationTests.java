@@ -18,14 +18,5 @@ class SpringDemoApplicationTests {
 
     //2. 执行要测试的对象的方法
 
-    @Autowired
-    private BranchDAO dao;
-
-    @Test
-    void contextLoads() {
-        for (branch branch : dao.selectAll()) {
-            System.out.println(branch);
-        }
-    }
 
 }

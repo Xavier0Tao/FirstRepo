@@ -16,7 +16,6 @@ import java.util.List;
 @Repository
 public interface BranchDAO {
 
-
     @Select("SELECT * FROM branch;")
     public List<branch> selectAll();
 

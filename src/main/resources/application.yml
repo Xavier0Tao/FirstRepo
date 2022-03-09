@@ -1,6 +1,5 @@
-
 #boot的配置文件需要进行设置添加（在project structure 的 facets 里)
-
+#总成环境
 server:
   port: 83
 
@@ -12,11 +11,10 @@ users:
   - nickname: Josepg
     id: 230
 
-datasource1:
-  driver: com.mysql.jdbc.Driver
-  url: jdbc:mysql://localhost:3306/girrafe
-  username: root
-  password: password
+logging:
+  level:
+    root: info
+    com.sprxavier.springdemo: debug
 
 spring:
   datasource:
@@ -24,3 +22,31 @@ spring:
     url: jdbc:mysql://localhost:3306/girrafe
     username: root
     password: password
+
+  profiles:
+    active: test
+---
+#生产环境
+spring:
+  config:
+    activate:
+      on-profile: pro
+server:
+  port: 8082
+
+---
+#开发环境
+spring:
+  config:
+    activate:
+      on-profile: dev
+server:
+  port: 8083
+---
+#测试环境
+spring:
+  config:
+    activate:
+      on-profile: test
+server:
+  port: 8084
