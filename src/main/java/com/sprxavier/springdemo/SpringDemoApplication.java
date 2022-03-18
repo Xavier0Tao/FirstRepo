@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ConfigurableApplicationContext;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 /**
@@ -21,6 +22,11 @@ import org.springframework.context.ConfigurableApplicationContext;
  * 否则会造成 bean 的重复定义。
  */
 @EnableConfigurationProperties(myDataSource.class)
+
+/**
+ * 会扫描当前包及其子包中的所有类型的注解，做customized swagger docs
+ */
+@EnableSwagger2
 public class SpringDemoApplication {
     /**
      * args在cmd下可以手动键入

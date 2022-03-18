@@ -15,7 +15,7 @@ public class myDataSource {
     private String driver;
     private String url;
 
-    @Length(max = 3,message = "username outta range 3 <-- go to myDataSource and cancel if needed")
+    @Length(max = 4,message = "username outta range 3 <-- go to myDataSource and cancel if needed")
     private String username;
 
     private String password;

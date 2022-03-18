@@ -14,7 +14,6 @@ users:
 logging:
   level:
     root: info
-    com.sprxavier.springdemo: debug
 
 spring:
   datasource:
@@ -25,6 +24,13 @@ spring:
 
   profiles:
     active: test
+  boot:
+    admin:
+      client:
+        url: "http://localhost:8080/"
+
+
+
 ---
 #生产环境
 spring:
@@ -50,3 +56,19 @@ spring:
       on-profile: test
 server:
   port: 8084
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    enabled-by-default: true
+  endpoint:
+    health:
+      enabled: true
+    info:
+      enabled: true
+
+info:
+  NOofApp: 1
+  author: Xavier

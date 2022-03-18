@@ -5,6 +5,7 @@ import com.sprxavier.springdemo.dao.BranchDAO;
 import com.sprxavier.springdemo.pojo.branch;
 import com.sprxavier.springdemo.pojo.myDataSource;
 
+import com.sprxavier.springdemo.service.IBranchService;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,6 +42,8 @@ public class FirstProgram {
     @Autowired
     private myDataSource source;
 
+    @Autowired
+    private IBranchService service;
 
 //    private static final Logger log = LoggerFactory.getLogger(FirstProgram.class);
 
@@ -72,6 +75,13 @@ public class FirstProgram {
         System.out.println(branchDao.selectAll());
 
         return branchDao.selectAll();
+    }
+
+    @GetMapping("/injection")
+    public void inj() {
+        branch branchById = service.getBranchById(6);
+        System.out.println("branch using service : " + branchById);
+
     }
 
 
